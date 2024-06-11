@@ -5,6 +5,5 @@ response = client.generate(
         model="CogVLM",
         video_path="../test_data/ikun.mp4",
         prompt="When does the man begin to play basketball?",
-        # prompt="do you like play basketball?",
     )
 print(response)
