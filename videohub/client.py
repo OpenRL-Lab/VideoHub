@@ -8,7 +8,7 @@ class Client:
         self.base_url = base_url
         self.api_key = api_key
 
-    def generate(self, model: str, video_path: str, prompt: str, temperature: float=0.001) -> dict:
+    def generate(self, model: str, video_path: str, prompt: str, temperature: float = 0.001) -> dict:
         assert Path(video_path).exists(), f"Video file {video_path} does not exist."
 
         headers = {"Authorization": f"Bearer {self.api_key}"}
@@ -17,7 +17,7 @@ class Client:
             "model": (None, model),
             "question": (None, prompt),
             "video": ("filename.mp4", video_file, "video/mp4"),
-            "temperature": temperature,
+            "temperature": (None, str(temperature)),
         }
         response = requests.post(self.base_url, files=data, headers=headers)
         video_file.close()
