@@ -18,6 +18,7 @@ print(
         model="CogVLM",
         video_path="test.mp4",
         prompt="When does the man begin to jump?",
+        temperature=0.3,
     )
 )
 ```
